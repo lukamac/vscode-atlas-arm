@@ -1,0 +1,42 @@
+{
+    "name": "vscode-atlas-arm",
+    "displayName": "vscode-atlas-arm",
+    "description": "Atlas ARM syntax highlighting extension",
+    "version": "1.0.0",
+    "publisher": "lukamac",
+    "engines": {
+        "vscode": "^1.41.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "arm",
+            "aliases": ["Atlas ARM", "arm"],
+            "extensions": [".a"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "arm",
+            "scopeName": "source.arm",
+            "path": "./syntaxes/arm.tmLanguage.json"
+        }],
+        "configurationDefaults": {
+            "[arm]": {
+                "files.insertFinalNewline": true,
+                "files.eol": "\n"
+            }
+        }
+    },
+    "license": "See license in LICENSE file",
+    "bugs": {
+        "url": "https://github.com/lukamac/vscode-atlas-arm/issues",
+        "email": "luka.macan@fer.hr"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/lukamac/vscode-atlas-arm.git"
+    },
+    "homepage": "https://github.com/lukamac/vscode-atlas-arm"
+}

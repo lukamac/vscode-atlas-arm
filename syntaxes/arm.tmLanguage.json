@@ -1,0 +1,164 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Atlas ARM",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#constants"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#labels"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"match": "\\b(MOV|MVN|ADD|ADC|SUB|SBC|RSB|RSC|MUL|MLA|UMULL|SMULL|SMLAL|AND|EOR|ORR|BIC)(EQ|NE|CS|HS|CC|LO|MI|PL|VS|VC|HI|LS|GE|LT|GT|LE|AL)?(S)?\\b",
+				"captures": {
+					"0": {
+						"name": "variable"
+					},
+					"2": {
+						"name": "keyword.control.arm"
+					}
+				}
+			},
+			{
+				"match": "\\b(MRS|MSR|CMP|CMN|TST|TEQ|CLZ|B|BL|SWI)(EQ|NE|CS|HS|CC|LO|MI|PL|VS|VC|HI|LS|GE|LT|GT|LE|AL)?\\b",
+				"captures": {
+					"0": {
+						"name": "variable"
+					},
+					"2": {
+						"name": "keyword.control.arm"
+					}
+				}
+			},
+			{
+				"match": "\\b(LDR)(EQ|NE|CS|HS|CC|LO|MI|PL|VS|VC|HI|LS|GE|LT|GT|LE|AL)?(B|SB|H|SH)?\\b",
+				"captures": {
+					"0": {
+						"name": "variable"
+					},
+					"2": {
+						"name": "keyword.control.arm"
+					}
+				}
+			},
+			{
+				"match": "\\b(STR)(EQ|NE|CS|HS|CC|LO|MI|PL|VS|VC|HI|LS|GE|LT|GT|LE|AL)?(B|H)?\\b",
+				"captures": {
+					"0": {
+						"name": "variable"
+					},
+					"2": {
+						"name": "keyword.control.arm"
+					}
+				}
+			},
+			{
+				"match": "\\b(LDM|STM)(EQ|NE|CS|HS|CC|LO|MI|PL|VS|VC|HI|LS|GE|LT|GT|LE|AL)?(IA|IB|DA|DB|FD|ED|FA|EA)?\\b",
+				"captures": {
+					"0": {
+						"name": "variable"
+					},
+					"2": {
+						"name": "keyword.control.arm"
+					}
+				}
+			},
+			{
+				"name": "variable",
+				"match": "\\bNOP\\b"
+			},
+			{
+				"name": "keyword.control.arm",
+				"match": "\\b(LSL|LSR|ASR|ROR|RRX)\\b"
+			},
+			{
+				"name": "support.type",
+				"match": "\\bR([0-9]|1[0-5])\\b"
+			},
+			{
+				"name": "variable.other.constant",
+				"match": "\\bPC\\b"
+			},
+			{
+				"name": "variable.other.constant",
+				"match": "\\bSPSR_(svc|abt|und|irq|fiq)\\b"
+			},
+			{
+				"name": "variable.other.constant",
+				"match": "\\bCPSR(_[fsec]+)?\\b"
+			},
+			{
+				"name": "keyword.control.arm",
+				"match": "!"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.arm",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.arm",
+					"match": "\\\\."
+				}
+			]
+		},
+		"labels": {
+			"patterns": [
+				{
+					"name": "entity.name.function.preprocessor",
+					"match": "\\w+"
+				}
+			]
+		},
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.line",
+					"match": ";.*"
+				}
+			]
+		},
+		"constants": {
+			"patterns": [
+				{
+					"name": "constant.numeric.hex",
+					"match": "# ?[+-]?[0-9a-fA-F]+"
+				},
+				{
+					"name": "constant.numeric.hex",
+					"match": "[+-]?[0-9][0-9a-fA-F]*"
+				},
+				{
+					"name": "constant.numeric.dec",
+					"match": "#? ?%D ?-?[0-9]+"
+				},
+				{
+					"name": "constant.numeric.bin",
+					"match": "#? ?%B ?-?[01]+"
+                },
+                {
+                    "name": "constant.numeric.hex",
+                    "match": "#? ?%H ?-?[0-9a-fA-F]+"
+				},
+				{
+					"name": "keyword.control.arm",
+					"match": "<[0-9]+"
+				}
+			]
+		}
+	},
+	"scopeName": "source.arm"
+}
