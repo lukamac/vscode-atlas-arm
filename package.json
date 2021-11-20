@@ -2,7 +2,7 @@
     "name": "vscode-atlas-arm",
     "displayName": "vscode-atlas-arm",
     "description": "Atlas ARM syntax highlighting extension",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "publisher": "lukamac",
     "engines": {
         "vscode": "^1.41.0"

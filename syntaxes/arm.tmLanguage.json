@@ -135,23 +135,15 @@
 			"patterns": [
 				{
 					"name": "constant.numeric.hex",
-					"match": "# ?[+-]?[0-9a-fA-F]+"
-				},
-				{
-					"name": "constant.numeric.hex",
-					"match": "[+-]?[0-9][0-9a-fA-F]*"
+					"match": "#?[+-]?0x[0-9a-fA-F]+"
 				},
 				{
 					"name": "constant.numeric.dec",
-					"match": "#? ?%D ?-?[0-9]+"
+					"match": "#?[+-]?[0-9]+"
 				},
 				{
 					"name": "constant.numeric.bin",
-					"match": "#? ?%B ?-?[01]+"
-                },
-                {
-                    "name": "constant.numeric.hex",
-                    "match": "#? ?%H ?-?[0-9a-fA-F]+"
+					"match": "#?[+-]?0b[01]+"
 				},
 				{
 					"name": "keyword.control.arm",

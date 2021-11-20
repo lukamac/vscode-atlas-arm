@@ -25,6 +25,6 @@ $ code --install-extension vscode-atlas-arm-<version>.vsix
 
 ## Release Notes
 
-### 1.0.0
+### 1.0.1
 
-Initial release of VSCode Atlas ARM extension.
+Updated extension for new numeric literals.
